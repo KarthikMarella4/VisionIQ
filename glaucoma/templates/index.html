@@ -5,8 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InSight | Eye Disease Prediction</title>
-    <link rel="stylesheet" href="{% static 'styles.css' %}?v=4">
+    <title>VisionIQ | Eye Disease Prediction</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}?v=5">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -19,11 +19,12 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="#home" class="logo">
-                <i class="fa-solid fa-eye"></i> InSig<span class="highlight">ht</span>
+                VisionIQ
             </a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#process">How It Works</a></li>
                 <li><a href="#prediction" class="cta-link">Prediction</a></li>
             </ul>
         </div>
@@ -34,7 +35,7 @@
         <section id="home" class="hero">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>AI-Powered <br><span class="highlight-text">Glaucoma Detection</span></h1>
+                    <h1>AI-Powered<br><span class="highlight-text">Glaucoma Detection</span></h1>
                     <p class="hero-subtitle">Early diagnosis saves sight. Utilizing advanced Deep Learning to predict
                         eye diseases with precision.</p>
                     <div class="hero-buttons">
@@ -43,30 +44,30 @@
                 </div>
             </div>
 
+            <!-- Features Grid (kept as benefits) -->
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="icon-box"><i class="fa-solid fa-heart-pulse"></i></div>
-                    <h3>Why Choose InSight</h3>
-                    <p>Glaucoma is a leading cause of irreversible blindness. Our AI assists clinicians, especially in
-                        rural areas, with efficient early diagnosis to prevent vision loss.</p>
+                    <h3>Why VisionIQ?</h3>
+                    <p>Glaucoma is a silent threat. VisionIQ empowers clinicians with instant, AI-driven analysis for
+                        early intervention.</p>
                 </div>
                 <div class="feature-card">
                     <div class="icon-box"><i class="fa-solid fa-microchip"></i></div>
-                    <h3>Advanced Tech</h3>
-                    <p>Leveraging CNNs for image analysis and GANs for data augmentation. Our models are trained on
-                        diverse datasets for robust performance.</p>
+                    <h3>Neural Tech</h3>
+                    <p>Powered by state-of-the-art CNNs, trained on thousands of fundus images to recognize subtle
+                        disease patterns.</p>
                 </div>
                 <div class="feature-card">
                     <div class="icon-box"><i class="fa-solid fa-file-medical"></i></div>
-                    <h3>Smart Services</h3>
-                    <p>Automated diagnosis, personalized insights, and remote monitoring capabilities to revolutionize
-                        eye care delivery.</p>
+                    <h3>Smart Health</h3>
+                    <p>Bridging the gap between automated diagnostics and patient care with reliable, explainable AI
+                        results.</p>
                 </div>
                 <div class="feature-card">
                     <div class="icon-box"><i class="fa-solid fa-flask"></i></div>
-                    <h3>Scientific Core</h3>
-                    <p>Analyzing OCT scans and fundus photography to identify biomarkers and understand disease
-                        progression patterns.</p>
+                    <h3>Clinical Precision</h3>
+                    <p>Analyzing optic nerve characteristics to provide a second opinion you can trust.</p>
                 </div>
             </div>
         </section>
@@ -75,37 +76,69 @@
         <section id="about" class="about-section">
             <div class="container">
                 <div class="section-header">
-                    <h2>About The Project</h2>
+                    <h2>About VisionIQ</h2>
                 </div>
 
                 <div class="abstract-card">
-                    <p>Glaucoma results in damage to the optic nerve and vision loss. It's often called the "silent
-                        thief of sight" because it develops slowly without early warning signs. Our solution employs
-                        a Convolutional Neural Network (CNN) architecture to detect glaucoma from retinal fundus
-                        images with high accuracy (98%). By analyzing the optic cup-to-disc ratio and textural
-                        patterns, the model differentiates between healthy and glaucomatous eyes, providing a
-                        reliable second opinion for medical professionals.</p>
+                    <p>VisionIQ tackles the "silent thief of sight" - Glaucoma. By leveraging deep learning
+                        architectures,
+                        we process retinal fundus images to detect pathological changes with high accuracy.
+                        Our system analyzes key biomarkers like the cup-to-disc ratio to distinguish between healthy
+                        and glaucomatous eyes, democratizing access to expert-level screening.</p>
                 </div>
             </div>
         </section>
+
+        <!-- Process Section -->
+        <section id="process" class="process-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>How It Works</h2>
+                    <p>Simple, fast, and accurate diagnosis in three steps.</p>
+                </div>
+                <div class="process-steps">
+                    <div class="step-card">
+                        <div class="step-number">01</div>
+                        <h3>Upload Image</h3>
+                        <p>Securely upload a high-quality retinal fundus image to our encrypted platform.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">02</div>
+                        <h3>AI Analysis</h3>
+                        <p>Our deep learning algorithm analyzes the optic nerve and retinal structure in seconds.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">03</div>
+                        <h3>Instant Result</h3>
+                        <p>Receive a detailed prediction indicating the likelihood of Glaucoma presence.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
 
         <!-- Prediction Section -->
         <section id="prediction" class="prediction-section">
             <div class="container">
                 <div class="prediction-wrapper">
                     <div class="prediction-card">
-                        <h2>Run Diagnosis</h2>
+                        <h2>AI Diagnosis</h2>
                         <form id="uploadForm" class="upload-form" enctype="multipart/form-data">
                             {% csrf_token %}
                             <div class="upload-area" id="drop-area">
                                 <i class="fa-solid fa-cloud-upload-alt"></i>
-                                <p>Drag & drop eye image here or click to browse</p>
+                                <p>Upload Retinal Image</p>
+                                <span class="upload-hint">Drag & drop or click to browse</span>
                                 <input type="file" id="imageInput" class="file-input" accept="image/*"
                                     onchange="previewImage(this)">
                             </div>
                             <div id="imageContainer" class="image-preview"></div>
                             <button type="button" id="predictBtn" class="btn btn-predict">
-                                <i class="fa-solid fa-wand-magic-sparkles"></i> Analyze Image
+                                <i class="fa-solid fa-brain"></i> Analyze Scan
                             </button>
                         </form>
                     </div>
@@ -115,39 +148,35 @@
 
                         <!-- Cards will be injected/shown via JS -->
                         <div class="info-card positive-card" id="positive-card">
-                            <h3><i class="fa-solid fa-triangle-exclamation"></i> Action Required</h3>
+                            <h3><i class="fa-solid fa-triangle-exclamation"></i> Critical Findings</h3>
                             <ul>
-                                <li><strong>Consult Specialist:</strong> Immediate appointment with an ophthalmologist.
+                                <li><strong>Consult Specialist:</strong> Immediate appointment with an ophthalmologist
+                                    is recommended.
                                 </li>
-                                <li><strong>Adhere to Treatment:</strong> Use prescribed medications/eye drops strictly.
+                                <li><strong>Treatment Plan:</strong> Adhere strictly to prescribed treatments.
                                 </li>
-                                <li><strong>Regular Monitoring:</strong> Schedule frequent IOP checks.</li>
-                                <li><strong>Lifestyle:</strong> Maintain healthy weight and manage stress.</li>
+                                <li><strong>Monitor:</strong> Frequent intraocular pressure (IOP) checks required.</li>
                             </ul>
                         </div>
 
                         <div class="info-card negative-card" id="negative-card">
-                            <h3><i class="fa-solid fa-shield-heart"></i> Maintain Eye Health</h3>
+                            <h3><i class="fa-solid fa-shield-heart"></i> Healthy Scan</h3>
                             <ul>
-                                <li><strong>Balanced Diet:</strong> Eat green leafy vegetables and foods rich in
-                                    antioxidants.</li>
-                                <li><strong>Screen Rules:</strong> Follow the 20-20-20 rule for digital screens.</li>
-                                <li><strong>UV Protection:</strong> Wear sunglasses outdoors.</li>
-                                <li><strong>No Smoking:</strong> Avoid smoking to reduce risk of optic nerve damage.
-                                </li>
+                                <li><strong>Routine Care:</strong> Continue regular eye exams.</li>
+                                <li><strong>Eye Health:</strong> Maintain a balanced diet and UV protection.</li>
+                                <li><strong>Lifestyle:</strong> Healthy habits support long-term vision.</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-    </main>
 
-    <footer>
-        <p>&copy; 2024 InSight Glaucoma Detection Project. All rights reserved.</p>
-    </footer>
+        <footer>
+            <p>&copy; 2024 VisionIQ AI. All rights reserved.</p>
+        </footer>
 
-    <script src="{% static 'index.js' %}"></script>
+        <script src="{% static 'index.js' %}"></script>
 </body>
 
 </html>
