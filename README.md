@@ -1,6 +1,7 @@
+# VisionIQ – AI Powered Glaucoma Detection
+<img width="950" height="473" alt="VisionIQ" src="https://github.com/user-attachments/assets/81574750-4fd9-434d-8a32-4c82a17a8ff0" />
 
-# Glaucoma Detection Project
-
+AI-powered system for early detection of glaucoma using deep learning and retinal fundus image analysis.
 
 ## Getting Started
 
