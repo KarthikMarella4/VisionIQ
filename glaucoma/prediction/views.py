@@ -4,17 +4,17 @@ import numpy as np
 from PIL import Image
 import os
 
-# Try to import ai_edge_litert (modern), fallback to tflite_runtime/tensorflow
+# Try to import tflite_runtime, fallback to tensorflow.lite
 try:
-    import ai_edge_litert.interpreter as tflite
+    import tflite_runtime.interpreter as tflite
 except ImportError:
     try:
-        import tflite_runtime.interpreter as tflite
+        import tensorflow.lite as tflite
     except ImportError:
         try:
-            import tensorflow.lite as tflite
+            import ai_edge_litert.interpreter as tflite
         except ImportError:
-            raise ImportError("Neither ai_edge_litert, tflite_runtime nor tensorflow is installed.")
+            raise ImportError("Neither tflite_runtime, tensorflow, nor ai_edge_litert is installed.")
 
 def home(request):
     return render(request, 'index.html')
