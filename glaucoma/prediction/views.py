@@ -52,8 +52,27 @@ def prediction(request):
             
             print(f"DEBUG: Calculated model path: {lite_model_path}", flush=True)
 
+            # Check if model exists, if not, try to reconstruct from chunks
             if not os.path.exists(lite_model_path):
-                 print(f"ERROR: Model file NOT FOUND at {lite_model_path}", flush=True)
+                 print(f"DEBUG: {lite_model_path} not found. Checking for chunks...", flush=True)
+                 chunk_0 = lite_model_path + ".000"
+                 if os.path.exists(chunk_0):
+                     print("DEBUG: Found chunks. Reassembling model...", flush=True)
+                     with open(lite_model_path, 'wb') as output_file:
+                         part_num = 0
+                         while True:
+                             chunk_path = f"{lite_model_path}.{part_num:03d}"
+                             if not os.path.exists(chunk_path):
+                                 break
+                             print(f"DEBUG: Merging chunk {chunk_path}", flush=True)
+                             with open(chunk_path, 'rb') as input_chunk:
+                                 output_file.write(input_chunk.read())
+                             part_num += 1
+                     print("DEBUG: Model reassembly complete.", flush=True)
+                 else:
+                     print(f"ERROR: Model chunks not found at {chunk_0}", flush=True)
+            
+            if not os.path.exists(lite_model_path):
                  # Fallback check current directory
                  if os.path.exists('model.tflite'):
                      lite_model_path = 'model.tflite'
