@@ -1,5 +1,4 @@
-tensorflow-cpu
-keras
+tflite-runtime
 Pillow
 django
 numpy
